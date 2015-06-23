@@ -4,7 +4,6 @@
   "description": "React component for fully fluid headings",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test",
     "babel": "babel src --out-dir .",
     "babel:watch": "babel -w src --out-dir .",
     "webpack": "webpack --progress --colors",
