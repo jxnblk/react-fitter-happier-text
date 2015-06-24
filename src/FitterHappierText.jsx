@@ -1,11 +1,12 @@
 
 import React from 'react'
+import { debounce } from 'lodash'
 
 class FitterHappierText extends React.Component {
 
   constructor () {
     super ()
-    this.resize = this.resize.bind(this)
+    this.resize = debounce(this.resize.bind(this))
     this.state = {
       width: 256,
       height: 24
@@ -15,8 +16,8 @@ class FitterHappierText extends React.Component {
   resize () {
     let el = React.findDOMNode(this.refs.text)
     let state = this.state
-    let width = el.offsetWidth
-    let height = el.offsetHeight
+    let width = el.offsetWidth || el.getComputedTextLength()
+    let height = el.offsetHeight | 24
     if (state.width !== width || state.height !== height) {
       this.setState({
         width: width,
@@ -29,7 +30,7 @@ class FitterHappierText extends React.Component {
     this.resize()
   }
 
-  componentDidUpdate () {
+  componentWillReceiveProps () {
     this.resize()
   }
 

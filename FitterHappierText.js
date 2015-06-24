@@ -20,12 +20,14 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _lodash = require('lodash');
+
 var FitterHappierText = (function (_React$Component) {
   function FitterHappierText() {
     _classCallCheck(this, FitterHappierText);
 
     _get(Object.getPrototypeOf(FitterHappierText.prototype), 'constructor', this).call(this);
-    this.resize = this.resize.bind(this);
+    this.resize = (0, _lodash.debounce)(this.resize.bind(this));
     this.state = {
       width: 256,
       height: 24
@@ -39,8 +41,8 @@ var FitterHappierText = (function (_React$Component) {
     value: function resize() {
       var el = _react2['default'].findDOMNode(this.refs.text);
       var state = this.state;
-      var width = el.offsetWidth;
-      var height = el.offsetHeight;
+      var width = el.offsetWidth || el.getComputedTextLength();
+      var height = el.offsetHeight | 24;
       if (state.width !== width || state.height !== height) {
         this.setState({
           width: width,
@@ -54,8 +56,8 @@ var FitterHappierText = (function (_React$Component) {
       this.resize();
     }
   }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps() {
       this.resize();
     }
   }, {
