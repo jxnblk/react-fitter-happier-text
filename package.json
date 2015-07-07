@@ -1,6 +1,6 @@
 {
   "name": "react-fitter-happier-text",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React component for fully fluid headings",
   "main": "FitterHappierText.js",
   "scripts": {
