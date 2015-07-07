@@ -2,7 +2,7 @@
   "name": "react-fitter-happier-text",
   "version": "1.0.1",
   "description": "React component for fully fluid headings",
-  "main": "index.js",
+  "main": "FitterHappierText.js",
   "scripts": {
     "babel": "babel src --out-dir .",
     "babel:watch": "babel -w src --out-dir .",
