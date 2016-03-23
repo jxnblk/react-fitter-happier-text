@@ -1,6 +1,5 @@
 
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { debounce } from 'lodash'
 
 class FitterHappierText extends React.Component {
@@ -15,7 +14,7 @@ class FitterHappierText extends React.Component {
   }
 
   resize () {
-    let el = ReactDOM.findDOMNode(this.refs.text)
+    let el = this.refs.text;
     let state = this.state
     let width = el.offsetWidth || el.getComputedTextLength()
     let height = el.offsetHeight | 24

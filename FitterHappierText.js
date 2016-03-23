@@ -20,10 +20,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
 var _lodash = require('lodash');
 
 var FitterHappierText = (function (_React$Component) {
@@ -43,7 +39,7 @@ var FitterHappierText = (function (_React$Component) {
   _createClass(FitterHappierText, [{
     key: 'resize',
     value: function resize() {
-      var el = _reactDom2['default'].findDOMNode(this.refs.text);
+      var el = this.refs.text;
       var state = this.state;
       var width = el.offsetWidth || el.getComputedTextLength();
       var height = el.offsetHeight | 24;
