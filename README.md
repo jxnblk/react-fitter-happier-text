@@ -2,6 +2,8 @@
 
 React component for fully fluid headings
 
+*Note:* Requires `react >= 0.14.0`
+
 ## Demo
 
 http://jxnblk.com/react-fitter-happier-text
