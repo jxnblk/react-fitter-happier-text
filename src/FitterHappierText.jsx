@@ -17,7 +17,7 @@ class FitterHappierText extends React.Component {
     let el = React.findDOMNode(this.refs.text)
     let state = this.state
     let width = el.offsetWidth || el.getComputedTextLength()
-    let height = el.offsetHeight | 24
+    let height = el.offsetHeight || 24
     if (state.width !== width || state.height !== height) {
       this.setState({
         width: width,
