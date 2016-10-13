@@ -56,7 +56,7 @@ class FitterHappierText extends React.Component {
     ].join(' ')
 
     return (
-      <svg {...this.props}
+      <svg
         viewBox={viewBox}
         style={styles.svg}>
         <text
